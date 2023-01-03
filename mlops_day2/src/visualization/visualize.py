@@ -1,10 +1,12 @@
-import torch
-from torch import nn
-from torch.utils.data import DataLoader, TensorDataset
 import click
 import matplotlib.pyplot as plt
-from src.models.model import ConvNet
+import torch
 from sklearn.manifold import TSNE
+from torch import nn
+from torch.utils.data import DataLoader, TensorDataset
+
+from src.models.model import ConvNet
+
 
 @click.group()
 def cli():

@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-import os
-import torch
-import numpy as np
-import click
 import logging
+import os
 from pathlib import Path
+
+import click
+import numpy as np
+import torch
 from dotenv import find_dotenv, load_dotenv
 
 

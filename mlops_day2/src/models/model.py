@@ -1,5 +1,6 @@
-from torch import nn
 import torch.nn.functional as F
+from torch import nn
+
 
 class ConvNet(nn.Module):
     def __init__(self):
@@ -15,10 +16,10 @@ class ConvNet(nn.Module):
         # -> n, 3, 32, 32
         x = self.pool(F.relu(self.conv1(x)))  # -> n, 16, 12, 12
         x = self.pool(F.relu(self.conv2(x)))  # -> n, 32, 5, 5
-        x = x.view(-1, 32 * 5 * 5)            # -> n, 400
-        x = F.relu(self.fc1(x))               # -> n, 120
-        x = F.relu(self.fc2(x))               # -> n, 84
-        #Layer needed to get penultimate layer for the vizualization
+        x = x.view(-1, 32 * 5 * 5)  # -> n, 400
+        x = F.relu(self.fc1(x))  # -> n, 120
+        x = F.relu(self.fc2(x))  # -> n, 84
+        # Layer needed to get penultimate layer for the vizualization
         self.penult_layer = x
-        x = self.fc3(x)                       # -> n, 10
+        x = self.fc3(x)  # -> n, 10
         return x
